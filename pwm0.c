@@ -33,7 +33,7 @@
 #include "deviceid.hpp"
 
 /* Define Driver Name */
-#define DRIVER_NAME     "pwm_0"
+#define DRIVER_NAME     "pwm0"
 
 static unsigned long   * base_addr  = NULL;
 static struct resource * res        = NULL;
@@ -167,7 +167,7 @@ static ssize_t proc_driver_write(struct file *file,
                 device_ID = packet.device_ID;
                 switch (packet.device_ID)
                 {
-                    case PWM_0:
+                    case PWM:
                         pwm_set_high_time(packet.data);
                         break;
                     default:;
@@ -360,7 +360,7 @@ static int driver_probe(struct platform_device *pdev)
 /* device match table to match with device node in device tree */
 static const struct of_device_id zynq_pwm_0_match[] =
 {
-    {.compatible = "ccc_pwm_0-1.00.a"},
+    {.compatible = "ccc-pwm_0-1.00.a"},
     { },
 };
 

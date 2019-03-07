@@ -1,6 +1,5 @@
 /*
  * deviceid.hpp
- * 
  */
 
 #ifndef DEVICEID_HPP_
@@ -17,176 +16,150 @@ extern "C" {
 typedef enum
 {
 	CONTROLLER_DEVICE_ID_BEGIN = 0,
-	IRSENSOR,
-	FLUSHVALVE_EN,
-	FLUSHVALVE_BRK,
-	FLUSHVALVE_PWM,
-	FLUSHVALVE_DIR,
-	FLUSHVALVE_RST,
-	FLUSHVALVE_DCY,
-	FLUSHVALVE_SLP,
-	FLUSHVALVE_IC4,
-	FLUSHVALVE_ENB,
-	FLUSHVALVE_28V,
-	FV,
-	FVCL,
-	FVOP,
-	FVTH,
-	DRAINVALVE_OP,
-	DRAINVALVE_CL,
-	DRVSWCL,
-	DRVSWOP,
-	SHUTOFFVALVE_OP,
-	SHUTOFFVALVE_CL,
-	SOVSWCL,
-	SOVSWOP,
-	DRAINLOCAL,
-	DRAINLOCAL_INV,
-	DRAINCMD,
-	DRAINCMD_INV,
-	EMERGENCY,
-	APPSELECTION,
-	DRAINDELAY,
-	VACUUMGEN,
-	VACUUMGEN_INV,
-	DRAININDICATOR,
-	DRAININD_INV,
-	LEAKINDICATOR_0,
-	LEAKINDICATOR_1,
-	LED_0,
-	LED_1,
-    VACUUMGEN_IN,
-    VACUUMGEN_INV_IN,
-    FAIL_GND_IN,
-    FAIL_IND_OUT,
-    FAIL_IND_GND_OUT,
-    FVENFAILIN,
-    DRAININD_IVS_IN,
-    LVLHILED,
-    LVLLOLED,
-    PINPGM,
-    MTEN,
-    MREN,
-    STEN,
-    SREN,
+	SW_ID,
+	PINPGM,
+	DRAIN_LOCAL_GND_IN,
+	DRAIN_CMD_28V_IN,
+	DRAIN_LOCAL_28V_IN,
+	DRAIN_CMD_GND_IN,
+	WT_28V_IN,
+	WT_GND_IN,
+	VG_28V_OUT,
+	VG_28V_OUT_DET,
+	VG_GND_OUT,
+	VG_GND_OUT_DET,
+	FLV_DIR,
+	FLV_NRESET,
+	FLV_DECAY,
+	FLV_NSLEEP,
+	FLV_I4,
+	FLV_ENABLE,
+	EN_28VV,
+	FLV_IND_CL,
+	FLV_IND_OP,
+	FLV_ALT_DRV_OP,
+	FLV_ALT_DRV_CL,
+	FLV_ALT_IND_CL,
+	FLV_ALT_IND_OP,
+	EN_485,
+	SW_SOV,
+	IR_ANA_INPUT,
+	SOV_DRV_OP,
+	SOV_DRV_CL,
+	SOV_IND_CL,
+	SOV_IND_OP,
+	SOV_CL_GND_OUT,
+	LEA1_28V_DOUT,
+	LEA2_28V_DOUT,
+	LEA1_GND_OUT,
+	LEA2_GND_OUT,
+	RGB_PWR_RED,
+	RGB_PWR_GREEN,
+	RGB_PWR_BLUE,
+	RGB_SW_RED,
+	RGB_SW_GREEN,
+	RGB_SW_BLUE,
+	LED3,
+	LED4,
+	LED5,
+	LED6,
+	LVL_FAIL_GND_OUT,
+	OPERATION_FAIL_GND_OUT,
+	FLV_I0_I3,
 	CONTROLLER_DEVICE_ID_END
 } ControllerDeviceIDs;
 
 typedef enum
 {
 	ADC_DEVICE_ID_BEGIN = 0,
-	LEVELSENSOR_0,
-	LEVELSENSOR_1,
-	ADC_CHANNEL_2,
-	ADC_CHANNEL_3,
-	LEAKSENSOR_0,
-	LEAKSENSOR_1,
-	WASTETLEVEL,
-	ADC_CHANNEL_7,
-	ADC_CHANNEL_8,
-	ADC_CHANNEL_9,
-	ADC_CHANNEL_10,
+	AN0_LEVEL_H,
+	AN1_LEVEL_L,
+	AN2,
+	AN3,
+	AN4_LEA1,
+	AN5_LEA2,
+	AN6_POWER_CURRENT,
+	AN7_POWER_VOLTAGE,
+	AN8,
+	AN9,
+	AN10,
 	ADC_DEVICE_ID_END
 } ADCDeviceIDs;
 
 typedef enum
 {
 	PWM_DEVICE_ID_BEGIN = 0,
-	PWM_0,
-	PWM_1,
-	PWM_2,
+	PWM,
 	PWM_DEVICE_ID_END
 } PWMDeviceIDs;
 
-typedef enum
-{
-	ZYBO_DEVICE_ID_BEGIN = 0,
-	ZYBO_BUTTONS,
-	ZYBO_SWITCHES,
-	ZYBO_LEDS,
-	ZYBO_DEVICE_ID_END
-} ZYBODeviceIDs;
 
-typedef enum
-{
-	SERIAL_DEVICE_ID_BEGIN = 0,
-	SERIAL_0,
-	SERIAL_1,
-	SERIAL_DEVICE_ID_END
-} SerialDeviceIDs;
+DeviceIdentity id_SW_ID		   		= {SW_ID,	    		"SW_ID"			};
+DeviceIdentity id_PINPGM		    	= {PINPGM, 		    	"PINPGM"   		};
+DeviceIdentity id_DRAIN_LOCAL_GND_IN		= {DRAIN_LOCAL_GND_IN,		"DRAIN_LOCAL_GND_IN"	};
+DeviceIdentity id_DRAIN_CMD_28V_IN  		= {DRAIN_CMD_28V_IN,		"DRAIN_CMD_28V_IN"	};
+DeviceIdentity id_DRAIN_LOCAL_28V_IN  		= {DRAIN_LOCAL_28V_IN,		"DRAIN_LOCAL_28V_IN"	};
+DeviceIdentity id_DRAIN_CMD_GND_IN		= {DRAIN_CMD_GND_IN,		"DRAIN_CMD_GND_IN"	};
+DeviceIdentity id_WT_28V_IN   			= {WT_28V_IN,  			"WT_28V_IN"		};
+DeviceIdentity id_WT_GND_IN  			= {WT_GND_IN, 			"WT_GND_IN"		};
+DeviceIdentity id_VG_28V_OUT      		= {VG_28V_OUT,       		"VG_28V_OUT"	    	};
+DeviceIdentity id_VG_28V_OUT_DET		= {VG_28V_OUT_DET,    		"VG_28V_OUT_DET"	};
+DeviceIdentity id_VG_GND_OUT    		= {VG_GND_OUT,   		"VG_GND_OUT"		};
+DeviceIdentity id_VG_GND_OUT_DET		= {VG_GND_OUT_DET,		"VG_GND_OUT_DET"	};
+DeviceIdentity id_FLV_DIR    			= {FLV_DIR,  			"FLV_DIR"   		};
+DeviceIdentity id_FLV_NRESET    		= {FLV_NRESET,  		"FLV_NRESET"    	};
+DeviceIdentity id_FLV_DECAY 			= {FLV_DECAY,  			"FLV_DECAY" 		};
+DeviceIdentity id_FLV_NSLEEP  			= {FLV_NSLEEP,  		"FLV_NSLEEP" 		};
+DeviceIdentity id_FLV_I4   			= {FLV_I4,  			"FLV_I4"  		};
+DeviceIdentity id_FLV_ENABLE   			= {FLV_ENABLE,			"FLV_ENABLE"		};
+DeviceIdentity id_EN_28VV    			= {EN_28VV,  			"EN_28VV"		};
+DeviceIdentity id_FLV_IND_CL       		= {FLV_IND_CL,    	    	"FLV_IND_CL"      	};
+DeviceIdentity id_FLV_IND_OP       		= {FLV_IND_OP,    	    	"FLV_IND_OP"      	};
+DeviceIdentity id_FLV_ALT_DRV_OP  		= {FLV_ALT_DRV_OP,  		"FLV_ALT_DRV_OP" 	};
+DeviceIdentity id_FLV_ALT_DRV_CL  		= {FLV_ALT_DRV_CL, 	 	"FLV_ALT_DRV_CL" 	};
+DeviceIdentity id_FLV_ALT_IND_CL    		= {FLV_ALT_IND_CL,  		"FLV_ALT_IND_CL" 	};
+DeviceIdentity id_FLV_ALT_IND_OP   		= {FLV_ALT_IND_OP,  		"FLV_ALT_IND_OP" 	};
+DeviceIdentity id_EN_485	       		= {EN_485,       		"EN_485"      		};
+DeviceIdentity id_SW_SOV	      		= {SW_SOV,       		"SW_SOV"	     	};
+DeviceIdentity id_IR_ANA_INPUT       		= {IR_ANA_INPUT,        	"IR_ANA_INPUT"      	};
+DeviceIdentity id_SOV_DRV_OP	 		= {SOV_DRV_OP, 			"SOV_DRV_OP"	 	};
+DeviceIdentity id_SOV_DRV_CL	 		= {SOV_DRV_CL, 			"SOV_DRV_CL"	 	};
+DeviceIdentity id_SOV_IND_CL       		= {SOV_IND_CL,      		"SOV_IND_CL"   	 	};
+DeviceIdentity id_SOV_IND_OP       		= {SOV_IND_OP,      		"SOV_IND_OP"   	 	};
+DeviceIdentity id_SOV_CL_GND_OUT		= {SOV_CL_GND_OUT,  		"SOV_CL_GND_OUT" 	};
+DeviceIdentity id_LEA1_28V_DOUT  		= {LEA1_28V_DOUT, 		"LEA1_28V_DOUT"		};
+DeviceIdentity id_LEA2_28V_DOUT  		= {LEA2_28V_DOUT, 		"LEA2_28V_DOUT"	 	};
+DeviceIdentity id_LEA1_GND_OUT 			= {LEA1_GND_OUT, 		"LEA1_GND_OUT"	 	};
+DeviceIdentity id_LEA2_GND_OUT  		= {LEA2_GND_OUT, 		"LEA2_GND_OUT"		};
+DeviceIdentity id_RGB_PWR_RED			= {RGB_PWR_RED,  		"RGB_PWR_RED" 		};
+DeviceIdentity id_RGB_PWR_GREEN			= {RGB_PWR_GREEN,  		"RGB_PWR_GREEN" 	};
+DeviceIdentity id_RGB_PWR_BLUE			= {RGB_PWR_BLUE,  		"RGB_PWR_BLUE" 		};
+DeviceIdentity id_RGB_SW_RED			= {RGB_SW_RED,  		"RGB_SW_RED" 		};
+DeviceIdentity id_RGB_SW_GREEN			= {RGB_SW_GREEN,  		"RGB_SW_GREEN" 		};
+DeviceIdentity id_RGB_SW_BLUE			= {RGB_SW_BLUE,  		"RGB_SW_BLUE" 		};
+DeviceIdentity id_LED3				= {LED3,        		"LED3"      		};
+DeviceIdentity id_LED4       			= {LED4,        		"LED4"      		};
+DeviceIdentity id_LED5			    	= {LED5,  			"LED5"    		};
+DeviceIdentity id_LED6			    	= {LED6,  			"LED6"    		};
+DeviceIdentity id_LVL_FAIL_GND_OUT		= {LVL_FAIL_GND_OUT,	  	"LVL_FAIL_GND_OUT" 	};
+DeviceIdentity id_OPERATION_FAIL_GND_OUT	= {OPERATION_FAIL_GND_OUT,	"OPERATION_FAIL_GND_OUT"};
+DeviceIdentity id_FLV_I0_I3			= {FLV_I0_I3,		  	"FLV_I0_I3" 		};
+
+DeviceIdentity id_AN0_LEVEL_H  			= {AN0_LEVEL_H,   		"AN0_LEVEL_H" 		};
+DeviceIdentity id_AN1_LEVEL_L  			= {AN1_LEVEL_L,   		"AN1_LEVEL_L" 		};
+DeviceIdentity id_AN2  				= {AN2,   			"AN2" 			};
+DeviceIdentity id_AN3  				= {AN3,   			"AN3" 			};
+DeviceIdentity id_AN4_LEA1   			= {AN4_LEA1,    		"AN4_LEA1"		};
+DeviceIdentity id_AN5_LEA2   			= {AN5_LEA2,    		"AN5_LEA2" 		};
+DeviceIdentity id_AN6_POWER_CURRENT	  	= {AN6_POWER_CURRENT,   	"AN6_POWER_CURRENT"	};
+DeviceIdentity id_AN7_POWER_VOLTAGE	  	= {AN7_POWER_VOLTAGE,   	"AN7_POWER_VOLTAGE"	};
+DeviceIdentity id_AN8				= {AN8,  			"AN8"			};
+DeviceIdentity id_AN9  				= {AN9,   			"AN9"			};
+DeviceIdentity id_AN10 				= {AN10,  			"AN10"			};
+
+DeviceIdentity id_PWM		          	= {PWM,           		"PWM"       		};
 
 
-DeviceIdentity id_PINPGM		    = {PINPGM, 		    "PINPGM"   		  	};
-DeviceIdentity id_MTEN       		= {MTEN,       		"MTEN"	      		};
-DeviceIdentity id_MREN       		= {MREN,       		"MREN"      		};
-DeviceIdentity id_STEN       		= {STEN,       		"STEN"      		};
-DeviceIdentity id_SREN       		= {SREN,       		"SREN"      		};
-DeviceIdentity id_LEVELSENSOR_0  	= {LEVELSENSOR_0,   "LEVELSENSOR_0" 	};
-DeviceIdentity id_LEVELSENSOR_1  	= {LEVELSENSOR_1,   "LEVELSENSOR_1" 	};
-DeviceIdentity id_WASTETLEVEL    	= {WASTETLEVEL,     "WASTETLEVEL"  		};
-DeviceIdentity id_LEAKSENSOR_0   	= {LEAKSENSOR_0,    "LEAKSENSOR_0"		};
-DeviceIdentity id_LEAKSENSOR_1   	= {LEAKSENSOR_1,    "LEAKSENSOR_1" 		};
-DeviceIdentity id_IRSENSOR       	= {IRSENSOR,        "IRSENSOR"      	};
-DeviceIdentity id_FLUSHVALVE_EN   	= {FLUSHVALVE_EN,   "FLUSHVALVE_EN"  	};
-DeviceIdentity id_FLUSHVALVE_BRK  	= {FLUSHVALVE_BRK,  "FLUSHVALVE_BRK" 	};
-DeviceIdentity id_FLUSHVALVE_PWM    = {FLUSHVALVE_PWM,  "FLUSHVALVE_PWM"    };
-DeviceIdentity id_FLUSHVALVE_DIR    = {FLUSHVALVE_DIR,  "FLUSHVALVE_DIR"    };
-DeviceIdentity id_FLUSHVALVE_ENB   	= {FLUSHVALVE_ENB,  "FLUSHVALVE_ENB"  	};
-DeviceIdentity id_FLUSHVALVE_SLP  	= {FLUSHVALVE_SLP,  "FLUSHVALVE_SLP" 	};
-DeviceIdentity id_FLUSHVALVE_RST    = {FLUSHVALVE_RST,  "FLUSHVALVE_RST"    };
-DeviceIdentity id_FLUSHVALVE_28V    = {FLUSHVALVE_28V,  "FLUSHVALVE_28V"    };
-DeviceIdentity id_FLUSHVALVE_IC4   	= {FLUSHVALVE_IC4,  "FLUSHVALVE_IC4"  	};
-DeviceIdentity id_FLUSHVALVE_DCY  	= {FLUSHVALVE_DCY,  "FLUSHVALVE_DCY" 	};
-DeviceIdentity id_FV			    = {FV,  			"FV"    			};
-DeviceIdentity id_DRAINVALVE_OP  	= {DRAINVALVE_OP,   "DRAINVALVE_OP" 	};
-DeviceIdentity id_DRAINVALVE_CL  	= {DRAINVALVE_CL,   "DRAINVALVE_CL" 	};
-DeviceIdentity id_SHUTOFFVALVE_OP 	= {SHUTOFFVALVE_OP, "SHUTOFFVALVE_OP" 	};
-DeviceIdentity id_SHUTOFFVALVE_CL 	= {SHUTOFFVALVE_CL, "SHUTOFFVALVE_CL" 	};
-DeviceIdentity id_DRAINLOCAL     	= {DRAINLOCAL,      "DRAINLOCAL"    	};
-DeviceIdentity id_DRAINLOCAL_INV   	= {DRAINLOCAL_INV,  "DRAINLOCAL_INV"   	};
-DeviceIdentity id_DRAINCMD  		= {DRAINCMD,   		"DRAINCMD" 			};
-DeviceIdentity id_DRAINCMD_INV 		= {DRAINCMD_INV,  	"DRAINCMD_INV"		};
-DeviceIdentity id_EMERGENCY      	= {EMERGENCY,       "EMERGENCY"     	};
-DeviceIdentity id_APPSELECTION   	= {APPSELECTION,    "APPSELECTION"  	};
-DeviceIdentity id_DRAINDELAY     	= {DRAINDELAY,      "DRAINDELAY"    	};
-DeviceIdentity id_VACUUMGEN      	= {VACUUMGEN,       "VACUUMGEN"     	};
-DeviceIdentity id_VACUUMGEN_INV     = {VACUUMGEN_INV,   "VACUUMGEN_INV"     };
-DeviceIdentity id_DRAININDICATOR 	= {DRAININDICATOR,  "DRAININDICATOR"	};
-DeviceIdentity id_DRAININD_INV		= {DRAININD_INV,    "DRAININD_INV"    	};
-DeviceIdentity id_LEAKINDICATOR_0  	= {LEAKINDICATOR_0, "LEAKINDICATOR_0"	};
-DeviceIdentity id_LEAKINDICATOR_1  	= {LEAKINDICATOR_1, "LEAKINDICATOR_1" 	};
-DeviceIdentity id_PWM_0          	= {PWM_0,           "PWM_0"         	};
-DeviceIdentity id_PWM_1          	= {PWM_1,           "PWM_1"         	};
-DeviceIdentity id_PWM_2          	= {PWM_2,           "PWM_2"         	};
-DeviceIdentity id_ADC_CHANNEL_2  	= {ADC_CHANNEL_2,   "ADC_CHANNEL_2" 	};
-DeviceIdentity id_ADC_CHANNEL_3  	= {ADC_CHANNEL_3,   "ADC_CHANNEL_3" 	};
-DeviceIdentity id_ADC_CHANNEL_7  	= {ADC_CHANNEL_7,   "ADC_CHANNEL_7" 	};
-DeviceIdentity id_ADC_CHANNEL_8  	= {ADC_CHANNEL_8,   "ADC_CHANNEL_8" 	};
-DeviceIdentity id_ADC_CHANNEL_9  	= {ADC_CHANNEL_9,   "ADC_CHANNEL_9" 	};
-DeviceIdentity id_ADC_CHANNEL_10 	= {ADC_CHANNEL_10,  "ADC_CHANNEL_10"	};
-DeviceIdentity id_ZYBO_BUTTONS   	= {ZYBO_BUTTONS,    "ZYBO_BUTTONS"  	};
-DeviceIdentity id_ZYBO_SWITCHES  	= {ZYBO_SWITCHES,   "ZYBO_SWITCHES" 	};
-DeviceIdentity id_ZYBO_LEDS      	= {ZYBO_LEDS,       "ZYBO_LEDS"     	};
-DeviceIdentity id_LED_0  			= {LED_0,   		"LED_0" 			};
-DeviceIdentity id_LED_1  			= {LED_1,   		"LED_1" 			};
-DeviceIdentity id_SOVSWCL       	= {SOVSWCL,         "SOVSWCL"     	 	};
-DeviceIdentity id_SOVSWOP       	= {SOVSWOP,         "SOVSWOP"     	 	};
-DeviceIdentity id_DRVSWCL       	= {DRVSWCL,         "DRVSWCL"     	 	};
-DeviceIdentity id_DRVSWOP       	= {DRVSWOP,         "DRVSWOP"     	 	};
-DeviceIdentity id_FVCL       		= {FVCL,    	    "FVCL"      	 	};
-DeviceIdentity id_FVOP       		= {FVOP,    	    "FVOP"      	 	};
-DeviceIdentity id_FVTH       		= {FVTH,    	    "FVTH"      	 	};
-DeviceIdentity id_VACUUMGEN_IN		= {VACUUMGEN_IN,    "VACUUMGEN_IN"    	};
-DeviceIdentity id_VACUUMGEN_INV_IN 	= {VACUUMGEN_INV_IN, "VACUUMGEN_INV_IN" };
-DeviceIdentity id_FAIL_GND_IN		= {FAIL_GND_IN,     "FAIL_GND_IN"    	};
-DeviceIdentity id_FAIL_IND_OUT		= {FAIL_IND_OUT,    "FAIL_IND_OUT"    	};
-DeviceIdentity id_FAIL_IND_GND_OUT 	= {FAIL_IND_GND_OUT, "FAIL_IND_GND_OUT" };
-DeviceIdentity id_FVENFAILIN		= {FVENFAILIN,      "FVENFAILIN"    	};
-DeviceIdentity id_DRAININD_IVS_IN	= {DRAININD_IVS_IN, "DRAININD_IVS_IN"   };
-DeviceIdentity id_LVLHILED       	= {LVLHILED,        "LVLHILED"      	};
-DeviceIdentity id_LVLLOLED       	= {LVLLOLED,        "LVLLOLED"      	};
-DeviceIdentity id_SERIAL_0       	= {SERIAL_0,        "SERIAL_0"      	};
-DeviceIdentity id_SERIAL_1       	= {SERIAL_1,        "SERIAL_1"      	};
 #ifdef __cplusplus
 }
 #endif
